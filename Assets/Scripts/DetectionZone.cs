@@ -15,8 +15,6 @@ public class DetectionZone : MonoBehaviour
             {
                 player.OnZoneEnter(type);
             }
-        } else {
-            Debug.Log(collider.tag);
         }
     }
     void OnTriggerExit2D(Collider2D collider)

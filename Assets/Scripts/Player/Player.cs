@@ -1,13 +1,22 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    public static Player instance;
     [SerializeField] private float speed = 5f;
     private Rigidbody2D rb;
+    public bool canDrag {get; private set;}
+    [HideInInspector] public bool isDragging;
+
+    void Awake() {
+        instance = this;
+    }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        canDrag = false;
+        isDragging = false;
     }
 
     void FixedUpdate()
@@ -21,5 +30,25 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 movement = new Vector2(moveX, moveY) * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + movement);
+    }
+
+    public void OnZoneEnter(EZonesTypes type) {
+        switch(type) {
+            case EZonesTypes.HOME:
+                canDrag = true;
+                break;
+            default:
+                break;
+        }
+    }
+    public void OnZoneExit(EZonesTypes type) {
+        switch(type) {
+            case EZonesTypes.HOME:
+                canDrag = false;
+                isDragging = false;
+                break;
+            default:
+                break;
+        }
     }
 }

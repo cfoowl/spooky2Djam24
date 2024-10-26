@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public bool canDrag {get; private set;}
     [HideInInspector] public bool isDragging;
+    public bool canMove;
 
     void Awake() {
         instance = this;
@@ -17,11 +18,14 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         canDrag = false;
         isDragging = false;
+        canMove = true;
     }
 
     void FixedUpdate()
     {
-        UpdateMovement();
+        if (canMove) {
+            UpdateMovement();
+        }
     }
 
     void UpdateMovement() {
@@ -36,6 +40,9 @@ public class Player : MonoBehaviour
         switch(type) {
             case EZonesTypes.HOME:
                 canDrag = true;
+                break;
+            case EZonesTypes.ASSEMBLY:
+                UIManager.instance.ShowAssemblyUIPanel();
                 break;
             default:
                 break;

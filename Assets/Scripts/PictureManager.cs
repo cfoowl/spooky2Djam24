@@ -14,11 +14,11 @@ public class PictureManager : MonoBehaviour
         instance = this;
     }
 
-    public void createPicture(NPC npc) {
+    public bool createPicture(NPC npc) {
         foreach(Picture picture in pictures) {
             if(picture.ID == npc.ID) {
                 // TODO
-                return;
+                return false;
             }
         }
         PictureSlot pictureSlot = null;
@@ -30,7 +30,7 @@ public class PictureManager : MonoBehaviour
         }
         if (pictureSlot == null) {
             // TODO 
-            return;
+            return false;
         }
 
         GameObject new_instance = Instantiate(prefab);
@@ -48,6 +48,7 @@ public class PictureManager : MonoBehaviour
 
         //Debug
         new_instance.GetComponentInChildren<TMP_Text>().text = npc.ID.ToString();
+        return true;
     }
 
 }

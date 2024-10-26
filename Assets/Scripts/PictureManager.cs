@@ -6,7 +6,7 @@ using UnityEngine;
 public class PictureManager : MonoBehaviour
 {
     public static PictureManager instance;
-    public List<Picture> Pictures = new List<Picture>();
+    public List<Picture> pictures = new List<Picture>();
     public List<PictureSlot> slots = new List<PictureSlot>();
     public GameObject prefab;
     void Awake()
@@ -15,6 +15,12 @@ public class PictureManager : MonoBehaviour
     }
 
     public void createPicture(NPC npc) {
+        foreach(Picture picture in pictures) {
+            if(picture.ID == npc.ID) {
+                // TODO
+                return;
+            }
+        }
         PictureSlot pictureSlot = null;
         foreach (PictureSlot slot in slots) {
             if (!slot.isOccupied) {
@@ -23,6 +29,7 @@ public class PictureManager : MonoBehaviour
             }
         }
         if (pictureSlot == null) {
+            // TODO 
             return;
         }
 
@@ -31,6 +38,7 @@ public class PictureManager : MonoBehaviour
         pictureSlot.isOccupied = true;
         new_instance.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         Picture newPicture = new_instance.GetComponent<Picture>();
+        pictures.Add(newPicture);
         newPicture.ID = npc.ID;
         newPicture.hasCollar = npc.hasCollar;
         newPicture.hasGlasses = npc.hasGlasses;

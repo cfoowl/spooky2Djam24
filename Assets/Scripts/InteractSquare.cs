@@ -41,9 +41,11 @@ public class InteractSquare : MonoBehaviour
     }
 
     public void FreeNPC() {
-        draggable.interactSquare = null;
-        draggable.npc.canMove = true;
-        draggable = null;
+        if (draggable) {
+            draggable.interactSquare = null;
+            draggable.npc.canMove = true;
+            draggable = null;
+        }
     }
 
 }

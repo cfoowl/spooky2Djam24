@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    public float centerRadius = 2f;
-    [SerializeField] private float speed = 1f;
+    [HideInInspector] public float centerRadius = 2f;
+    [SerializeField] float speed = 1f;
     [HideInInspector] public bool canMove;
-    public Vector2 randomDestination = Vector2.zero;
-    private bool inCoroutine = false;
+    Vector2 randomDestination = Vector2.zero;
+    bool inCoroutine = false;
+
+    // Identity trait
+    public int ID;
+    public string IDname;
+    public bool hasGlasses;
+    public bool hasHat;
+    public bool hasTie;
+    public bool hasCollar;
+
 
     void Start() {
         canMove = true;

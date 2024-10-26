@@ -30,7 +30,7 @@ public class DetectionZone : MonoBehaviour
             if (player != null)
             {
                 player.OnZoneExit(type);
-                if (interactSquare) {
+                if (interactSquare && interactSquare) {
                     interactSquare.FreeNPC();
                 }
             }

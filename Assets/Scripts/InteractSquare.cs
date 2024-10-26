@@ -6,11 +6,13 @@ public class InteractSquare : MonoBehaviour
 {
     public Color defaultColor;
     public Color hoverColor;
-    SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
+    [SerializeField] private Draggable draggable = null;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultColor;
+        draggable = null;
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -26,9 +28,22 @@ public class InteractSquare : MonoBehaviour
         if (collider.CompareTag("NPC"))
         {
             spriteRenderer.color = defaultColor;
-            collider.gameObject.GetComponent<Draggable>().interactSquare = null;    
+            collider.gameObject.GetComponent<Draggable>().interactSquare = null;
         }
         
+    }
+
+    public void GetNPC(Draggable newDraggable) {
+        if(draggable) {
+            FreeNPC();
+        }
+        draggable = newDraggable;
+    }
+
+    public void FreeNPC() {
+        draggable.interactSquare = null;
+        draggable.npc.canMove = true;
+        draggable = null;
     }
 
 }

@@ -5,7 +5,12 @@ using UnityEngine;
 public class Draggable : MonoBehaviour
 {
     Vector3 mousePositionOffset;
-    [HideInInspector] public InteractSquare interactSquare = null;
+    public InteractSquare interactSquare = null;
+    public NPC npc;
+
+    void Start() {
+        npc = gameObject.GetComponent<NPC>();
+    }
 
     private Vector3 GetMouseWorldPosition() {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -15,6 +20,9 @@ public class Draggable : MonoBehaviour
         if (Player.instance.canDrag) {
             mousePositionOffset = gameObject.transform.position - GetMouseWorldPosition();
             Player.instance.isDragging = true;
+            if (interactSquare) {
+                interactSquare.FreeNPC();
+            }
         }
     }
 
@@ -27,7 +35,10 @@ public class Draggable : MonoBehaviour
     private void OnMouseUp() {
         Player.instance.isDragging = false;
         if (interactSquare) {
+            interactSquare.GetNPC(this);
             transform.position = interactSquare.transform.position;
+            interactSquare.spriteRenderer.color = interactSquare.defaultColor;
+            npc.canMove = false;
         }
     }
 }

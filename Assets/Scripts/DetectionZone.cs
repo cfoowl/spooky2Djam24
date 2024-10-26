@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class DetectionZone : MonoBehaviour
 {
+    private InteractSquare interactSquare;
     [SerializeField] private EZonesTypes type;
+
+    void Awake() {
+        interactSquare = GetComponentInChildren<InteractSquare>();
+    }
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
@@ -25,7 +30,11 @@ public class DetectionZone : MonoBehaviour
             if (player != null)
             {
                 player.OnZoneExit(type);
+                if (interactSquare) {
+                    interactSquare.FreeNPC();
+                }
             }
         }
     }
+    
 }

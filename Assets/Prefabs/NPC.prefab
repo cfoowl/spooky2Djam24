@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4592857873499540262}
   - component: {fileID: -2647589565384230503}
   - component: {fileID: 6035907375450235917}
+  - component: {fileID: 7331260007764633991}
+  - component: {fileID: 1774470675533561037}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -143,3 +145,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89e22e91e7240e45aeab21e94d909aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactSquare: {fileID: 0}
+--- !u!114 &7331260007764633991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335969791557982100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b885f8d319d68a4c8c00d784939e967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  canMove: 0
+--- !u!50 &1774470675533561037
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335969791557982100}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

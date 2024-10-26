@@ -40,6 +40,8 @@ public class Draggable : MonoBehaviour
                 transform.position = interactSquare.transform.position;
                 interactSquare.spriteRenderer.color = interactSquare.defaultColor;
                 npc.canMove = false;
+
+                CameraZoom.instance.StartCoroutine(CameraZoom.instance.startZoom(interactSquare.transform.position));
             }
         }
     }

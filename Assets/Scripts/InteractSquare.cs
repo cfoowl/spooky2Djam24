@@ -45,6 +45,7 @@ public class InteractSquare : MonoBehaviour
 
     public void FreeNPC() {
         if (draggable) {
+            CameraZoom.instance.ResetZoom();
             draggable.interactSquare = null;
             draggable.npc.canMove = true;
             draggable = null;

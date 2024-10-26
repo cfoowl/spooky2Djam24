@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
             case EZonesTypes.PHOTO:
                 canDrag = true;
                 break;
+            case EZonesTypes.RETURN:
+                canDrag = true;
+                break;
             case EZonesTypes.ASSEMBLY:
                 UIManager.instance.ShowAssemblyUIPanel();
                 break;
@@ -61,6 +64,10 @@ public class Player : MonoBehaviour
                 isDragging = false;
                 break;
             case EZonesTypes.PHOTO:
+                canDrag = false;
+                isDragging = false;
+                break;
+            case EZonesTypes.RETURN:
                 canDrag = false;
                 isDragging = false;
                 break;

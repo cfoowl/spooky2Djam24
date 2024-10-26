@@ -38,6 +38,7 @@ public class PictureManager : MonoBehaviour
         pictureSlot.isOccupied = true;
         new_instance.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         Picture newPicture = new_instance.GetComponent<Picture>();
+        newPicture.originalParent = pictureSlot.gameObject.transform;
         pictures.Add(newPicture);
         newPicture.ID = npc.ID;
         newPicture.hasCollar = npc.hasCollar;

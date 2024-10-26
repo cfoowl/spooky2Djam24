@@ -5,3 +5,10 @@ public enum EZonesTypes {
     ASSEMBLY,
     RETURN
 }
+
+public enum EDeathCauses {
+    NONE,
+    ILLNESS,
+    ACCIDENT,
+    MURDER,
+}

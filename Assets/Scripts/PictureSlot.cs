@@ -5,5 +5,5 @@ using UnityEngine;
 public class PictureSlot : MonoBehaviour
 {
     public bool isOccupied = false;
-   
+
 }

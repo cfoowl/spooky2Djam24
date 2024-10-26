@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 6771282789819440654}
   - component: {fileID: 6719772930668351949}
   - component: {fileID: 7767188004516687419}
+  - component: {fileID: 8301096438705125134}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -185,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f192007895803594ebb717ca4649b2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalParent: {fileID: 0}
   ID: 0
   hasGlasses: 0
   hasHat: 0
@@ -197,7 +199,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6857348123927461171}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!114 &7767188004516687419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,3 +230,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &8301096438705125134
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857348123927461171}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

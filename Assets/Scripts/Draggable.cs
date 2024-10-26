@@ -35,10 +35,12 @@ public class Draggable : MonoBehaviour
     private void OnMouseUp() {
         Player.instance.isDragging = false;
         if (interactSquare) {
-            interactSquare.GetNPC(this);
-            transform.position = interactSquare.transform.position;
-            interactSquare.spriteRenderer.color = interactSquare.defaultColor;
-            npc.canMove = false;
+            if(interactSquare.type == Player.instance.currentStand) {
+                interactSquare.GetNPC(this);
+                transform.position = interactSquare.transform.position;
+                interactSquare.spriteRenderer.color = interactSquare.defaultColor;
+                npc.canMove = false;
+            }
         }
     }
 }

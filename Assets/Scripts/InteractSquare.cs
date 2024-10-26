@@ -8,11 +8,13 @@ public class InteractSquare : MonoBehaviour
     public Color hoverColor;
     public SpriteRenderer spriteRenderer;
     [SerializeField] private Draggable draggable = null;
+    public EZonesTypes type;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultColor;
         draggable = null;
+        type = GetComponentInParent<DetectionZone>().type;
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -38,6 +40,7 @@ public class InteractSquare : MonoBehaviour
             FreeNPC();
         }
         draggable = newDraggable;
+        Action();
     }
 
     public void FreeNPC() {
@@ -45,6 +48,15 @@ public class InteractSquare : MonoBehaviour
             draggable.interactSquare = null;
             draggable.npc.canMove = true;
             draggable = null;
+        }
+    }
+    public void Action() {
+        switch(type) {
+            case EZonesTypes.PHOTO:
+                PictureManager.instance.createPicture(draggable.npc);
+                break;
+            default:
+                break;
         }
     }
 

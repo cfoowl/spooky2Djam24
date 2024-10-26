@@ -6,7 +6,7 @@ using UnityEngine;
 public class DetectionZone : MonoBehaviour
 {
     private InteractSquare interactSquare;
-    [SerializeField] private EZonesTypes type;
+    public EZonesTypes type;
 
     void Awake() {
         interactSquare = GetComponentInChildren<InteractSquare>();

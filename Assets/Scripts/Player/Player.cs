@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public bool canDrag {get; private set;}
     [HideInInspector] public bool isDragging;
     public bool canMove;
+    public EZonesTypes currentStand;
 
     void Awake() {
         instance = this;
@@ -37,8 +38,12 @@ public class Player : MonoBehaviour
     }
 
     public void OnZoneEnter(EZonesTypes type) {
+        currentStand = type;
         switch(type) {
             case EZonesTypes.HOME:
+                canDrag = true;
+                break;
+            case EZonesTypes.PHOTO:
                 canDrag = true;
                 break;
             case EZonesTypes.ASSEMBLY:
@@ -49,8 +54,13 @@ public class Player : MonoBehaviour
         }
     }
     public void OnZoneExit(EZonesTypes type) {
+        currentStand = EZonesTypes.NONE;
         switch(type) {
             case EZonesTypes.HOME:
+                canDrag = false;
+                isDragging = false;
+                break;
+            case EZonesTypes.PHOTO:
                 canDrag = false;
                 isDragging = false;
                 break;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Draggable : MonoBehaviour
 {
     Vector3 mousePositionOffset;
+    [HideInInspector] public InteractSquare interactSquare = null;
 
     private Vector3 GetMouseWorldPosition() {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -25,5 +26,8 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp() {
         Player.instance.isDragging = false;
+        if (interactSquare) {
+            transform.position = interactSquare.transform.position;
+        }
     }
 }

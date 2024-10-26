@@ -17,6 +17,7 @@ public class InteractSquare : MonoBehaviour
         if (collider.CompareTag("NPC"))
         {
             spriteRenderer.color = hoverColor;
+            collider.gameObject.GetComponent<Draggable>().interactSquare = this;    
         }
         
     }
@@ -25,6 +26,7 @@ public class InteractSquare : MonoBehaviour
         if (collider.CompareTag("NPC"))
         {
             spriteRenderer.color = defaultColor;
+            collider.gameObject.GetComponent<Draggable>().interactSquare = null;    
         }
         
     }

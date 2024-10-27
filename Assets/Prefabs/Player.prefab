@@ -103,6 +103,12 @@ MonoBehaviour:
   isDragging: 0
   canMove: 0
   currentStand: 0
+  sprites:
+  - {fileID: 21300000, guid: fd2b71e5a343ca64c8ebaca1b16552ee, type: 3}
+  - {fileID: 21300000, guid: 52da4bf358b471846bcd4c746710c2ab, type: 3}
+  - {fileID: 21300000, guid: 6ca4262ce6c38c246a4f87fe72fbde72, type: 3}
+  - {fileID: 21300000, guid: 6524b356c58af7c408dcb319da2ac1ca, type: 3}
+  spriteRenderer: {fileID: 722281671497317221}
 --- !u!50 &5810972663135601979
 Rigidbody2D:
   serializedVersion: 4
@@ -166,7 +172,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 1.23}
+    oldSize: {x: 1.5789474, y: 2.0230262}
     newSize: {x: 4.8, y: 4.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

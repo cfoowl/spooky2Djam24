@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public bool isDragging;
     public bool canMove;
     public EZonesTypes currentStand;
+    public Sprite[] sprites;
+    public SpriteRenderer spriteRenderer;
 
     void Awake() {
         instance = this;
@@ -32,6 +34,16 @@ public class Player : MonoBehaviour
     void UpdateMovement() {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
+
+        if(moveX > 0) {
+            spriteRenderer.sprite = sprites[2];
+        } else if (moveX < 0) {
+            spriteRenderer.sprite = sprites[1];
+        } else if (moveY > 0) {
+            spriteRenderer.sprite = sprites[3];
+        } else {
+            spriteRenderer.sprite = sprites[0];
+        }
 
         Vector2 movement = new Vector2(moveX, moveY) * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + movement);

@@ -48,11 +48,25 @@ public class NPC : MonoBehaviour
         if (Vector2.Distance(currentPosition, targetPosition) > centerRadius)
         {
             // Go to the center
+            // if((currentPosition - targetPosition).x > 0 ) {
+            //     nPCSprite.bodySpriteRenderer.flipX = false;
+            //     nPCSprite.hatSpriteRenderer.flipX = false;
+            // } else {
+            //     nPCSprite.bodySpriteRenderer.flipX = true;
+            //     nPCSprite.hatSpriteRenderer.flipX = true;
+            // }
             transform.position = Vector2.MoveTowards(currentPosition, targetPosition, speed * Time.deltaTime);
         } else {
             // Random movement
             if(randomDestination != Vector2.zero) {
                 if (Vector2.Distance(currentPosition, randomDestination) > 0.1f) {
+                    // if((currentPosition - randomDestination).x > 0 ) {
+                    //     nPCSprite.bodySpriteRenderer.flipX = false;
+                    //     nPCSprite.hatSpriteRenderer.flipX = false;
+                    // } else {
+                    //     nPCSprite.bodySpriteRenderer.flipX = true;
+                    //     nPCSprite.hatSpriteRenderer.flipX = true;
+                    // }
                     transform.position = Vector2.MoveTowards(currentPosition, randomDestination, speed * Time.deltaTime);
                 } else {
                     if (!inCoroutine) {

@@ -23,7 +23,10 @@ public class UIManager : MonoBehaviour
         assemblyUiPanel.SetActive(true);
         Player.instance.canMove = false;
         nameDropdown.ClearOptions();
-        nameDropdown.AddOptions(NPCManager.instance.getNameList());
+        List<string> options = new List<string>();
+        options.Add("-- Select a name --");
+        options.AddRange(NPCManager.instance.getNameList());
+        nameDropdown.AddOptions(options);
     }
     public void HideAssemblyUIPanel() {
         assemblyUiPanel.SetActive(false);

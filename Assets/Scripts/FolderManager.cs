@@ -30,6 +30,9 @@ public class FolderManager : MonoBehaviour
             // TODO 
             return;
         }
+        if (dropdown_death_cause.value == 0 || dropdown_name.value == 0 || picture_slot.picture == null) {
+            return;
+        }
         GameObject new_instance = Instantiate(prefab);
         new_instance.transform.SetParent(folderSlot.gameObject.transform, false);
         folderSlot.isOccupied = true;
@@ -45,7 +48,10 @@ public class FolderManager : MonoBehaviour
         folder.pictureSprite.changeBodySprite(PictureManager.instance.defaultSprites[pictureSprite.colorIndex]);
         folder.pictureSprite.changeHatSprite(PictureManager.instance.hatSprites[pictureSprite.hatIndex], pictureSprite.hatIndex);
         folder.pictureID = picture_slot.picture.GetComponent<Picture>().ID;
-
+        
+        picture_slot.picture.GetComponent<Picture>().Delete();
+        dropdown_death_cause.value = 0;
+        dropdown_name.value = 0;
     }
 
 

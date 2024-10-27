@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameflowManager : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class GameflowManager : MonoBehaviour
 
     void Defeat() {
         Debug.LogWarning("Boloss t'as perdu");
+        SceneManager.LoadScene("GameOver");
     }
    
 }

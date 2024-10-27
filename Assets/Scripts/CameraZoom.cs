@@ -47,12 +47,21 @@ public class CameraZoom : MonoBehaviour
     public void ResetZoom()
     {
         StopAllCoroutines();
+        StartCoroutine(progressiveResetZoom());
         // Revenir aux valeurs originales
-        mainCamera.transform.position = originalPosition;
+        // mainCamera.transform.position = originalPosition;
         
-        if (mainCamera.orthographic)
-            mainCamera.orthographicSize = originalSizeOrFOV;
-        else
-            mainCamera.fieldOfView = originalSizeOrFOV;
+        // if (mainCamera.orthographic)
+        //     mainCamera.orthographicSize = originalSizeOrFOV;
+        // else
+        //     mainCamera.fieldOfView = originalSizeOrFOV;
+    }
+
+    public IEnumerator progressiveResetZoom() {
+        while(mainCamera.orthographicSize < originalSizeOrFOV-0.1f) {
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, originalPosition, zoomSpeed * Time.deltaTime);
+            mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, 5, zoomSpeed * Time.deltaTime);
+            yield return new WaitForFixedUpdate();
+        }
     }
 }

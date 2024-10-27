@@ -53,6 +53,10 @@ public class InteractSquare : MonoBehaviour
     }
     public void Action() {
         switch(type) {
+            case EZonesTypes.HOME:
+                Textbubble.instance.tMP_Text.text = draggable.npc.sentence;
+                Textbubble.instance.ShowBubble();
+                break;
             case EZonesTypes.PHOTO:
                 PictureManager.instance.createPicture(draggable.npc);
                 break;

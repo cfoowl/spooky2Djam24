@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
             case EZonesTypes.HOME:
                 canDrag = false;
                 isDragging = false;
+                Textbubble.instance.HideBubble();
                 break;
             case EZonesTypes.PHOTO:
                 canDrag = false;

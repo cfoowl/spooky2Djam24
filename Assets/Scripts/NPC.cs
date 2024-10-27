@@ -68,6 +68,10 @@ public class NPC : MonoBehaviour
     }
 
     public void HappyEnd() {
+        Delete();
+    }
+
+    public void Delete() {
         NPCManager.instance.NPCs.Remove(this);
         Destroy(gameObject);
     }

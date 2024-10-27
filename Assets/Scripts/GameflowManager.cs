@@ -25,6 +25,14 @@ public class GameflowManager : MonoBehaviour
         } else if(satisfaction >= satisfactionMax) {
             satisfaction = satisfactionMax;
         }
+
+        if (satisfaction >= 5) {
+            MusicManager.instance.ChangBGM(1);
+        } else if (satisfaction >= 3) {
+            MusicManager.instance.ChangBGM(2);
+        } else if (satisfaction >= 1) {
+            MusicManager.instance.ChangBGM(3);
+        }
     }
 
 

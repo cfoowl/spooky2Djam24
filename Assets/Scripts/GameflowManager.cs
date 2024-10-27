@@ -18,6 +18,7 @@ public class GameflowManager : MonoBehaviour
     void Awake() {
         instance = this;
         satisfaction = satisfactionStart;
+        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     public void UpdateSatisfaction(int delta) {

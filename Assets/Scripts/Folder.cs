@@ -16,6 +16,7 @@ public class Folder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public Vector3 defaultScale = Vector3.one;
     public Vector3 highlightScale = Vector3.one * 1.2f;
     public PictureSprite pictureSprite;
+    public int pictureID;
 
     void Awake() {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -47,5 +48,11 @@ public class Folder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public void OnEndDrag(PointerEventData eventData) {
         canvasGroup.blocksRaycasts = true;
         rectTransform.anchoredPosition = Vector2.zero;
+    }
+
+    public void Delete() {
+        FolderManager.instance.folders.Remove(this);
+        originalParent.GetComponent<FolderSlot>().isOccupied = false;
+        Destroy(gameObject);
     }
 }

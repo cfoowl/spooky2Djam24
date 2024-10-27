@@ -12,8 +12,7 @@ public class ReturnFolderSlot : MonoBehaviour, IDropHandler
             UIManager.instance.ReturnFolder(folder);
             UIManager.instance.HideFolderUIPanel();
             CameraZoom.instance.ResetZoom();
-            folder.originalParent.gameObject.GetComponent<FolderSlot>().isOccupied = false;
-            Destroy(folder.gameObject);
+            folder.Delete();
         }
     }
 }

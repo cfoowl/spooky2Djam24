@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FolderManager : MonoBehaviour
 {
+    public static FolderManager instance;
     public FormPictureSlot picture_slot;
     public TMP_Dropdown dropdown_name;
     public TMP_Dropdown dropdown_death_cause;
@@ -12,6 +13,10 @@ public class FolderManager : MonoBehaviour
     public List<Folder> folders = new List<Folder>();
     public List<FolderSlot> slots = new List<FolderSlot>();
     public Canvas canvas;
+
+    public void Awake() {
+        instance = this;
+    }
 
     public void CreateFolder() {
         FolderSlot folderSlot = null;
@@ -39,6 +44,7 @@ public class FolderManager : MonoBehaviour
         PictureSprite pictureSprite = picture_slot.picture.GetComponent<PictureSprite>();
         folder.pictureSprite.changeBodySprite(PictureManager.instance.defaultSprites[pictureSprite.colorIndex]);
         folder.pictureSprite.changeHatSprite(PictureManager.instance.hatSprites[pictureSprite.hatIndex], pictureSprite.hatIndex);
+        folder.pictureID = picture_slot.picture.GetComponent<Picture>().ID;
 
     }
 

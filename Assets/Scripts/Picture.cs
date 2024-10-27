@@ -41,5 +41,14 @@ public class Picture : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
         canvasGroup.blocksRaycasts = true;
         rectTransform.anchoredPosition = Vector2.zero;
     }
+
+    public void Delete() {
+        if (formPictureSlot) {
+            formPictureSlot.picture = null;
+        }
+        PictureManager.instance.pictures.Remove(this);
+        originalParent.GetComponent<PictureSlot>().isOccupied = false;
+        Destroy(gameObject);
+    }
     
 }

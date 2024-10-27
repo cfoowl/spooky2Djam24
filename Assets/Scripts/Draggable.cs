@@ -18,6 +18,8 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDown() {
         if (Player.instance.canDrag) {
+
+            SoundManager.instance.PlayGrabGhostSound();
             Cursor.SetCursor(GameflowManager.instance.dragCursor, Vector2.zero, CursorMode.ForceSoftware);
             mousePositionOffset = gameObject.transform.position - GetMouseWorldPosition();
             Player.instance.isDragging = true;

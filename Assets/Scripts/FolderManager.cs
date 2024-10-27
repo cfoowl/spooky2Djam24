@@ -52,6 +52,9 @@ public class FolderManager : MonoBehaviour
         picture_slot.picture.GetComponent<Picture>().Delete();
         dropdown_death_cause.value = 0;
         dropdown_name.value = 0;
+
+
+        SoundManager.instance.PlayPaperSound();
     }
 
 

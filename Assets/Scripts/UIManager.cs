@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public void ShowAssemblyUIPanel() {
         assemblyUiPanel.SetActive(true);
         Player.instance.canMove = false;
+        nameDropdown.value = 0;
         nameDropdown.ClearOptions();
         List<string> options = new List<string>();
         options.Add("-- Select a name --");
@@ -42,18 +43,25 @@ public class UIManager : MonoBehaviour
     }
     public void ReturnFolder(Folder folder) {
         if(draggable) {
+            SoundManager.instance.PlayPaperSound();
             if (folder.nameText.text == draggable.npc.IDname) {
                 if(folder.deathCauses == draggable.npc.deathCause){
                     if(folder.pictureID == draggable.npc.ID) {
                         // success
                         draggable.npc.HappyEnd();
                     } else {
+                        // SoundManager.instance.PlayIncorrectSound();
+                        SoundManager.instance.PlayAngryGhostSound();
                         Debug.Log("Wrong picture");
                     }
                 } else {
+                    // SoundManager.instance.PlayIncorrectSound();
+                    SoundManager.instance.PlayAngryGhostSound();
                     Debug.Log("Wrong cause");
                 }
             } else {
+                // SoundManager.instance.PlayIncorrectSound();
+                SoundManager.instance.PlayAngryGhostSound();
                 Debug.Log("Wrong name");
             }
         }

@@ -19,7 +19,7 @@ public class PictureManager : MonoBehaviour
     public bool createPicture(NPC npc) {
         foreach(Picture picture in pictures) {
             if(picture.ID == npc.ID) {
-                // TODO
+
                 return false;
             }
         }
@@ -31,7 +31,7 @@ public class PictureManager : MonoBehaviour
             }
         }
         if (pictureSlot == null) {
-            // TODO 
+
             return false;
         }
 
@@ -47,7 +47,8 @@ public class PictureManager : MonoBehaviour
         newPicture.pictureSprite.colorIndex = npc.colorIndex;
         newPicture.pictureSprite.changeBodySprite(defaultSprites[npc.colorIndex]);
         newPicture.pictureSprite.changeHatSprite(hatSprites[npc.hatIndex], npc.hatIndex);
-
+        
+        SoundManager.instance.PlayPhotoPrintSound();
         return true;
     }
 

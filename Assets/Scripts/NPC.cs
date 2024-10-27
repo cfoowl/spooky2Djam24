@@ -77,6 +77,7 @@ public class NPC : MonoBehaviour
 
     public void HappyEnd() {
         GameflowManager.instance.UpdateSatisfaction(1);
+        SoundManager.instance.PlayHappyGhostSound();
         Delete();
     }
     public void BadEnd() {

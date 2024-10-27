@@ -90,6 +90,8 @@ public class NPCManager : MonoBehaviour
 
         script.patienceMax = Random.Range(patienceMin, patienceMax);
 
+        SoundManager.instance.PlaySpawnGhostSound();
+
     }
 
     public List<string> getNameList() {

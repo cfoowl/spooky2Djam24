@@ -21,6 +21,7 @@ public class NPCManager : MonoBehaviour
     public float spawnCDMin = 10f;
     public float spawnCDMax = 15f;
     private int IDnumber = 0;
+    private float N_spawn = 0;
 
     void Awake() {
         instance = this;
@@ -29,14 +30,31 @@ public class NPCManager : MonoBehaviour
     }
     void Start()
     {
+        N_spawn = 0;
+        Invoke("SpawnNPC", 3);
         StartCoroutine(SpawnTimer());
     }
 
     IEnumerator SpawnTimer() {
         while (true) {
-            WaitForSeconds wait = new WaitForSeconds(Random.Range(spawnCDMin,spawnCDMax));
+            float cooldown = generateCooldown();
+            Debug.Log("Cooldown : " + cooldown);
+            WaitForSeconds wait = new WaitForSeconds(cooldown);
             yield return wait;
             SpawnNPC();
+        }
+
+    }
+
+    float generateCooldown() {
+        if(N_spawn <= 0) {
+            float max_big_spawn_time = 150 / Mathf.Sqrt(Time.time + 100) + 15;
+            N_spawn = Mathf.Ceil(Time.time / 50);
+            return Random.Range(max_big_spawn_time -10, max_big_spawn_time);
+        } else {
+            float max_small_spawn_time = 150 / Mathf.Sqrt(Time.time + 100);
+            N_spawn--;
+            return Random.Range(1, max_small_spawn_time);
         }
 
     }

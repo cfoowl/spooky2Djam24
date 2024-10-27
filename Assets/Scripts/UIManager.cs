@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
         folderUiPanel.SetActive(true);
     }
     public void HideFolderUIPanel() {
-        assemblyUiPanel.SetActive(false);
+        folderUiPanel.SetActive(false);
     }
     
 }

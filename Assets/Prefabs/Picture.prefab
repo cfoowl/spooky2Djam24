@@ -256,7 +256,7 @@ RectTransform:
   m_GameObject: {fileID: 6857348123927461171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
+  m_LocalScale: {x: 0.58, y: 0.58, z: 0.58}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1951051034713939998}
@@ -285,8 +285,6 @@ MonoBehaviour:
   formPictureSlot: {fileID: 0}
   pictureSprite: {fileID: 6392904727188934589}
   ID: 0
-  hatIndex: 0
-  colorIndex: 0
 --- !u!114 &6392904727188934589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b676a4b00e1bdb4498f08fa3134dc571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hatIndex: 0
+  colorIndex: 0
   hatSpriteRenderer: {fileID: 4672730809935083647}
   bodySpriteRenderer: {fileID: 6991102158994603014}
   hatSpriteOffset:

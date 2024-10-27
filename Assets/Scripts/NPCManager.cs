@@ -85,8 +85,8 @@ public class NPCManager : MonoBehaviour
 
 
         // Patience 
-        float patienceMax = 500 / Mathf.Sqrt(Time.time + 100) + 10;
-        float patienceMin = 200 / Mathf.Sqrt(Time.time + 100) + 10;
+        float patienceMax = 800 / Mathf.Sqrt(Time.time + 100) + 10;
+        float patienceMin = 400 / Mathf.Sqrt(Time.time + 100) + 10;
 
         script.patienceMax = Random.Range(patienceMin, patienceMax);
 

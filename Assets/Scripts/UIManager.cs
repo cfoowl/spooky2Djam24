@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
                     if(folder.pictureID == draggable.npc.ID) {
                         // success
                         draggable.npc.HappyEnd();
+                        GameflowManager.instance.UpdateSatisfaction(1);
                     } else {
                         Debug.Log("Wrong picture");
                     }

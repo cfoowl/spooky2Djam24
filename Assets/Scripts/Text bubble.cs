@@ -7,6 +7,7 @@ public class Textbubble : MonoBehaviour
 {
     public static Textbubble instance;
     public TMP_Text tMP_Text;
+    public bool showBubble = false;
     void Awake() {
         instance = this;
         tMP_Text = GetComponentInChildren<TMP_Text>();

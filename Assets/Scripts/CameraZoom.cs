@@ -41,6 +41,13 @@ public class CameraZoom : MonoBehaviour
         while (ZoomToPoint(targetPosition)) {
             yield return new WaitForFixedUpdate();
         }
+        if(Textbubble.instance.showBubble) {
+            Textbubble.instance.ShowBubble();
+        }
+    }
+    public void startZoomCoroutine(Vector3 targetPosition) {
+        StopAllCoroutines();
+        StartCoroutine(startZoom(targetPosition));
     }
 
 
@@ -48,13 +55,6 @@ public class CameraZoom : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(progressiveResetZoom());
-        // Revenir aux valeurs originales
-        // mainCamera.transform.position = originalPosition;
-        
-        // if (mainCamera.orthographic)
-        //     mainCamera.orthographicSize = originalSizeOrFOV;
-        // else
-        //     mainCamera.fieldOfView = originalSizeOrFOV;
     }
 
     public IEnumerator progressiveResetZoom() {

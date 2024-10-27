@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
         switch(type) {
             case EZonesTypes.HOME:
                 canDrag = true;
+                Textbubble.instance.showBubble = true;
                 break;
             case EZonesTypes.PHOTO:
                 canDrag = true;
@@ -63,15 +64,19 @@ public class Player : MonoBehaviour
                 canDrag = false;
                 isDragging = false;
                 Textbubble.instance.HideBubble();
+                CameraZoom.instance.ResetZoom();
+                Textbubble.instance.showBubble = false;
                 break;
             case EZonesTypes.PHOTO:
                 canDrag = false;
                 isDragging = false;
+                CameraZoom.instance.ResetZoom();
                 break;
             case EZonesTypes.RETURN:
                 canDrag = false;
                 isDragging = false;
                 UIManager.instance.HideFolderUIPanel();
+                CameraZoom.instance.ResetZoom();
                 break;
             default:
                 break;

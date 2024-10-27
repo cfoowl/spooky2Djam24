@@ -22,6 +22,8 @@ public class Draggable : MonoBehaviour
             Player.instance.isDragging = true;
             if (interactSquare) {
                 interactSquare.FreeNPC();
+                CameraZoom.instance.ResetZoom();
+                Textbubble.instance.HideBubble();
             }
         }
     }
@@ -41,7 +43,7 @@ public class Draggable : MonoBehaviour
                 interactSquare.spriteRenderer.color = interactSquare.defaultColor;
                 npc.canMove = false;
 
-                CameraZoom.instance.StartCoroutine(CameraZoom.instance.startZoom(interactSquare.transform.position));
+                CameraZoom.instance.startZoomCoroutine(interactSquare.transform.position);
             }
         }
     }

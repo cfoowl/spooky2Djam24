@@ -45,7 +45,6 @@ public class InteractSquare : MonoBehaviour
 
     public void FreeNPC() {
         if (draggable) {
-            CameraZoom.instance.ResetZoom();
             draggable.interactSquare = null;
             draggable.npc.canMove = true;
             draggable = null;
@@ -55,7 +54,7 @@ public class InteractSquare : MonoBehaviour
         switch(type) {
             case EZonesTypes.HOME:
                 Textbubble.instance.tMP_Text.text = draggable.npc.sentence;
-                Textbubble.instance.ShowBubble();
+
                 break;
             case EZonesTypes.PHOTO:
                 PictureManager.instance.createPicture(draggable.npc);

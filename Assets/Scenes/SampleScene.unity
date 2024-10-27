@@ -2338,15 +2338,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCprefab: {fileID: 4335969791557982100, guid: 377ad4c699c4d454eb3e147f8f3083d2, type: 3}
   firstnameList:
-  - Darrow
-  - Virginia
-  - Cassius
-  - Roque
+  - Jack
+  - Ronald
+  - Suckon
+  - Mike
+  - Aerith
+  - Akira
+  - Eliza
+  - Nelson
+  - Sam
   surnameList:
-  - Andromedus
-  - Bellona
-  - Augustus
-  - Telemanus
+  - Crackers
+  - Grump
+  - Hunt
+  - Jackson
+  - Flower
+  - Toriyama
+  - Beth
+  - Mandela
+  - Sung
+  - Deez
+  deathCauseSentences:
+  - I got hair cancer
+  - I caught a cold
+  - I contracted purple fever
+  - I coughed my lungs
+  - I died from the ligma disease
+  - I was hit by an electric scooter
+  - I stubbed my little toe
+  - A piano fell on me
+  - I walked too fast in a wall
+  - I tripped
+  - My children wanted the inheritance
+  - My neighbor is an asshole
+  - Jeff the killer caught me
+  - Someone put a knife in my stomach
+  - Elon Musk annihilated my brain
+  greetings:
+  - Hi
+  - Hello
+  - Howdy
+  - I don't deserve to be there
   centerRadius: 2
   spawnCDMin: 1
   spawnCDMax: 3

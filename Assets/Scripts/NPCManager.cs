@@ -9,6 +9,8 @@ public class NPCManager : MonoBehaviour
     public GameObject NPCprefab;
     public string[] firstnameList;
     public string[] surnameList;
+    public string[] deathCauseSentences;
+    public string[] greetings;
     public float centerRadius = 2f;
     public float spawnCDMin = 10f;
     public float spawnCDMax = 15f;
@@ -47,6 +49,11 @@ public class NPCManager : MonoBehaviour
         script.hasCollar = Random.Range(0,2) == 0;
         script.centerRadius = centerRadius;
 
+        int deathCauseIndex = Random.Range(1, 4);
+        script.deathCause = (EDeathCauses) deathCauseIndex;
+        script.sentence = greetings[Random.Range(0,greetings.Length)] + " , ";
+        script.sentence += "I'm " + script.IDname + ". ";
+        script.sentence += deathCauseSentences[(deathCauseIndex-1)*5 + Random.Range(0,5)] + ".";
     }
 
     public List<string> getNameList() {

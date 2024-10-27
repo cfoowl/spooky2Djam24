@@ -18,6 +18,8 @@ public class NPC : MonoBehaviour
     public bool hasHat;
     public bool hasTie;
     public bool hasCollar;
+    public EDeathCauses deathCause;
+    public string sentence;
 
 
     void Start() {

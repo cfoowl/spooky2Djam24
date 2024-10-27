@@ -18,6 +18,7 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDown() {
         if (Player.instance.canDrag) {
+            Cursor.SetCursor(GameflowManager.instance.dragCursor, Vector2.zero, CursorMode.ForceSoftware);
             mousePositionOffset = gameObject.transform.position - GetMouseWorldPosition();
             Player.instance.isDragging = true;
             if (interactSquare) {
@@ -36,6 +37,7 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp() {
         Player.instance.isDragging = false;
+        Cursor.SetCursor(GameflowManager.instance.defaultCursor, Vector2.zero, CursorMode.ForceSoftware);
         if (interactSquare) {
             if(interactSquare.type == Player.instance.currentStand) {
                 interactSquare.GetNPC(this);

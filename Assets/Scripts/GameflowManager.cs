@@ -10,6 +10,9 @@ public class GameflowManager : MonoBehaviour
     public int satisfactionMax  = 15;
     public int satisfaction;
 
+    public Texture2D defaultCursor;
+    public Texture2D dragCursor;
+
     void Awake() {
         instance = this;
         satisfaction = satisfactionStart;

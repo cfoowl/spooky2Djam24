@@ -773,7 +773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &253585602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2586,6 +2586,8 @@ MonoBehaviour:
   satisfactionStart: 5
   satisfactionMax: 15
   satisfaction: 0
+  defaultCursor: {fileID: 2800000, guid: 5d15892e2accf2441a4e336ee9551ed8, type: 3}
+  dragCursor: {fileID: 2800000, guid: efa144897195e2c4e9891cbe93c3872d, type: 3}
 --- !u!4 &599825601
 Transform:
   m_ObjectHideFlags: 0

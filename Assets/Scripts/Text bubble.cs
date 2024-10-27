@@ -9,11 +9,11 @@ public class Textbubble : MonoBehaviour
     public TMP_Text tMP_Text;
     void Awake() {
         instance = this;
+        tMP_Text = GetComponentInChildren<TMP_Text>();
     }
     void Start()
     {
         gameObject.SetActive(false);
-        tMP_Text = GetComponentInChildren<TMP_Text>();
     }
 
     public void ShowBubble() {

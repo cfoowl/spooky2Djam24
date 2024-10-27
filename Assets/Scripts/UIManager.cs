@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     public GameObject assemblyUiPanel;
+    public GameObject folderUiPanel;
     public TMP_Dropdown nameDropdown;
     void Awake() {
         instance = this;
@@ -26,6 +27,12 @@ public class UIManager : MonoBehaviour
     public void HideAssemblyUIPanel() {
         assemblyUiPanel.SetActive(false);
         Player.instance.canMove = true;
+    }
+    public void ShowFolderUIPanel() {
+        folderUiPanel.SetActive(true);
+    }
+    public void HideFolderUIPanel() {
+        assemblyUiPanel.SetActive(false);
     }
     
 }

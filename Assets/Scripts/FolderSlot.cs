@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PictureSlot : MonoBehaviour
+public class FolderSlot : MonoBehaviour
 {
     public bool isOccupied = false;
 }

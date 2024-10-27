@@ -10,15 +10,24 @@ public class FolderManager : MonoBehaviour
     public TMP_Dropdown dropdown_death_cause;
     public GameObject prefab;
     public List<Folder> folders = new List<Folder>();
+    public List<FolderSlot> slots = new List<FolderSlot>();
     public Canvas canvas;
 
     public void CreateFolder() {
-        if (folders.Count >= 4) {
-            //TODO
+        FolderSlot folderSlot = null;
+        foreach (FolderSlot slot in slots) {
+            if (!slot.isOccupied) {
+                folderSlot = slot;
+                break;
+            }
+        }
+        if (folderSlot == null) {
+            // TODO 
             return;
         }
         GameObject new_instance = Instantiate(prefab);
-        new_instance.transform.SetParent(canvas.transform);
+        new_instance.transform.SetParent(folderSlot.gameObject.transform, false);
+        folderSlot.isOccupied = true;
         new_instance.transform.localScale = Vector3.one;
 
         Folder folder = new_instance.GetComponent<Folder>();

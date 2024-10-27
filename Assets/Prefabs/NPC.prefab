@@ -206,7 +206,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.42, y: 0.15}
+  m_Offset: {x: 0.02, y: 0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -217,7 +217,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.59, y: 2.23}
+  m_Size: {x: 0.92, y: 1.69}
   m_EdgeRadius: 0
 --- !u!114 &6035907375450235917
 MonoBehaviour:
@@ -248,8 +248,11 @@ MonoBehaviour:
   centerRadius: 2
   speed: 1
   canMove: 0
+  patienceMax: 0
+  currentPatience: 0
   nPCSprite: {fileID: 7420100471768688224}
   ID: 0
+  spriteID: 0
   IDname: 
   hatIndex: 0
   colorIndex: 0

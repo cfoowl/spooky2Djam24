@@ -18,7 +18,7 @@ public class InteractSquare : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("NPC"))
+        if (collider.CompareTag("NPC") && type == Player.instance.currentStand)
         {
             spriteRenderer.color = hoverColor;
             collider.gameObject.GetComponent<Draggable>().interactSquare = this;    

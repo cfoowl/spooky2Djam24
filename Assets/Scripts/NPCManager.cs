@@ -64,6 +64,14 @@ public class NPCManager : MonoBehaviour
         script.sentence = greetings[Random.Range(0,greetings.Length)] + " , ";
         script.sentence += "I'm " + script.IDname + ". ";
         script.sentence += deathCauseSentences[(deathCauseIndex-1)*5 + Random.Range(0,5)] + "...";
+
+
+        // Patience 
+        float patienceMax = 500 / Mathf.Sqrt(Time.time + 100) + 10;
+        float patienceMin = 200 / Mathf.Sqrt(Time.time + 100) + 10;
+
+        script.patienceMax = Random.Range(patienceMin, patienceMax);
+
     }
 
     public List<string> getNameList() {

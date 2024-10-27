@@ -10,6 +10,8 @@ public class NPC : MonoBehaviour
     [HideInInspector] public bool canMove;
     Vector2 randomDestination = Vector2.zero;
     bool inCoroutine = false;
+    public float patienceMax;
+    public float currentPatience;
 
     public NPCSprite nPCSprite;
 
@@ -26,11 +28,16 @@ public class NPC : MonoBehaviour
     void Start() {
         canMove = true;
         StartCoroutine(SelectRandomDestination(new WaitForSeconds(0)));
+        currentPatience = 0f;
     }
     void Update()
     {
         if(canMove) {
             UpdateMovement();
+        }
+        currentPatience += Time.deltaTime;
+        if(currentPatience >= patienceMax) {
+            BadEnd();
         }
     }
 
@@ -69,6 +76,11 @@ public class NPC : MonoBehaviour
     }
 
     public void HappyEnd() {
+        GameflowManager.instance.UpdateSatisfaction(1);
+        Delete();
+    }
+    public void BadEnd() {
+        GameflowManager.instance.UpdateSatisfaction(-1);
         Delete();
     }
 

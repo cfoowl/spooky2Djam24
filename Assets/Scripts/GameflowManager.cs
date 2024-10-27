@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameflowManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class GameflowManager : MonoBehaviour
 
     public Texture2D defaultCursor;
     public Texture2D dragCursor;
+    public TMP_Text cursorText;
 
     void Awake() {
         instance = this;
@@ -33,6 +35,13 @@ public class GameflowManager : MonoBehaviour
         } else if (satisfaction >= 1) {
             MusicManager.instance.ChangBGM(3);
         }
+    }
+
+    void Update() {
+        UpdateText();
+    }
+    void UpdateText() {
+        cursorText.text = ((int)(Mathf.Floor(Time.time))).ToString("D4");
     }
 
 

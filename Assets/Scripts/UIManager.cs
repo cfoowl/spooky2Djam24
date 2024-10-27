@@ -43,7 +43,6 @@ public class UIManager : MonoBehaviour
     }
     public void ReturnFolder(Folder folder) {
         if(draggable) {
-            SoundManager.instance.PlayPaperSound();
             if (folder.nameText.text == draggable.npc.IDname) {
                 if(folder.deathCauses == draggable.npc.deathCause){
                     if(folder.pictureID == draggable.npc.ID) {

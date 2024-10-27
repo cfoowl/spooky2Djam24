@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
             case EZonesTypes.RETURN:
                 canDrag = false;
                 isDragging = false;
+                UIManager.instance.HideFolderUIPanel();
                 break;
             default:
                 break;

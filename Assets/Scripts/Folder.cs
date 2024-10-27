@@ -15,6 +15,7 @@ public class Folder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public EDeathCauses deathCauses;
     public Vector3 defaultScale = Vector3.one;
     public Vector3 highlightScale = Vector3.one * 1.2f;
+    public PictureSprite pictureSprite;
 
     void Awake() {
         canvasGroup = GetComponent<CanvasGroup>();

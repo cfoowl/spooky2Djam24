@@ -35,7 +35,10 @@ public class FolderManager : MonoBehaviour
         folder.nameText.text = dropdown_name.options[dropdown_name.value].text;
         folder.deathCauseText.text = dropdown_death_cause.options[dropdown_death_cause.value].text;
         folder.deathCauses = (EDeathCauses) dropdown_death_cause.value;
-        
+
+        PictureSprite pictureSprite = picture_slot.picture.GetComponent<PictureSprite>();
+        folder.pictureSprite.changeBodySprite(PictureManager.instance.defaultSprites[pictureSprite.colorIndex]);
+        folder.pictureSprite.changeHatSprite(PictureManager.instance.hatSprites[pictureSprite.hatIndex], pictureSprite.hatIndex);
 
     }
 

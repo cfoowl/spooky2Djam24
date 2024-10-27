@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Picture : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -12,8 +13,8 @@ public class Picture : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     public FormPictureSlot formPictureSlot = null;
 
 
+    public PictureSprite pictureSprite;
     public int ID;
-    public int hatIndex;
 
     void Awake() {
         canvasGroup = GetComponent<CanvasGroup>();

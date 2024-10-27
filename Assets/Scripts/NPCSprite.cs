@@ -13,4 +13,8 @@ public class NPCSprite : MonoBehaviour
         hatSpriteRenderer.transform.localPosition = hatSpriteOffset[hatIndex];
     }
 
+    public void changeBodySprite(Sprite newBodySprite) {
+        bodySpriteRenderer.sprite = newBodySprite;
+    }
+
 }

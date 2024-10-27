@@ -1756,7 +1756,7 @@ Transform:
   m_GameObject: {fileID: 504268079}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.72, z: 0}
+  m_LocalPosition: {x: 0.036, y: -1.131, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1800,9 +1800,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 539885339
-  m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingLayerID: 1479166069
+  m_SortingLayer: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: f5beba75734b65046bd73175932a61d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2691,6 +2691,18 @@ MonoBehaviour:
   - Hello
   - Howdy
   - I don't deserve to be there
+  hatSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 4d2da196632d62a4c97c5200c93c1760, type: 3}
+  - {fileID: 21300000, guid: 47815b0f8785eaa43ac35f3c2dd8a85f, type: 3}
+  - {fileID: 21300000, guid: 62147fe33fb67a545b544c60bb06cdc2, type: 3}
+  - {fileID: 21300000, guid: 00beefc4078ef5e448450a85595a753c, type: 3}
+  - {fileID: 21300000, guid: ab2185f41334b6642bd8d6f7b7f297e5, type: 3}
+  - {fileID: 21300000, guid: 84860aa4189562f4bb2ed4dc3c5320b0, type: 3}
+  defaultSprites:
+  - {fileID: 21300000, guid: 0172a732df6e9bf4887f6314220c2ec4, type: 3}
+  - {fileID: 21300000, guid: 4ba4363cb93cb1949842a693dfe19bb8, type: 3}
+  - {fileID: 21300000, guid: 03b73bc9da49cb845bfc7df94d025723, type: 3}
   centerRadius: 2
   spawnCDMin: 1
   spawnCDMax: 3
@@ -3344,9 +3356,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -799468539
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 508446529
+  m_SortingLayer: 2
+  m_SortingOrder: 23
   m_Sprite: {fileID: 21300000, guid: f4ccab602535b4f44adef330875c856f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4291,12 +4303,24 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2078289848345381743, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078289848345381743, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078289848345381743, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078289848345381743, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.295
       objectReference: {fileID: 0}
     - target: {fileID: 2078289848345381743, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.802
       objectReference: {fileID: 0}
     - target: {fileID: 2078289848345381743, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4332,15 +4356,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7160441305606601855, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
       propertyPath: m_Size.x
-      value: 0.95
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 7160441305606601855, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
       propertyPath: m_Size.y
-      value: 0.28
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160441305606601855, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 7160441305606601855, guid: d98a0e4407535b64c9b4519a044e61e2, type: 3}
       propertyPath: m_Offset.y
-      value: -0.71
+      value: -1.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

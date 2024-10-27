@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
     public int ID;
     public string IDname;
     public int hatIndex; 
+    public int colorIndex;
     public EDeathCauses deathCause;
     public string sentence;
 

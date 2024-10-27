@@ -15,6 +15,7 @@ public class NPC : MonoBehaviour
 
     // Identity trait
     public int ID;
+    public int spriteID;
     public string IDname;
     public int hatIndex; 
     public int colorIndex;
@@ -73,6 +74,7 @@ public class NPC : MonoBehaviour
 
     public void Delete() {
         NPCManager.instance.NPCs.Remove(this);
+        NPCManager.instance.spriteIDAvailable.Add(spriteID);
         Destroy(gameObject);
     }
 }

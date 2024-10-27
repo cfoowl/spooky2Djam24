@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class NPCManager : MonoBehaviour
 {
     public static NPCManager instance;
     public List<NPC> NPCs = new List<NPC>();
+    public int maxSprite;
+    public List<int> spriteIDAvailable;
     public GameObject NPCprefab;
     public string[] firstnameList;
     public string[] surnameList;
@@ -21,6 +24,8 @@ public class NPCManager : MonoBehaviour
 
     void Awake() {
         instance = this;
+        maxSprite = hatSprites.Length*defaultSprites.Length;
+        spriteIDAvailable = Enumerable.Range(0,maxSprite).ToList();
     }
     void Start()
     {
@@ -37,6 +42,9 @@ public class NPCManager : MonoBehaviour
     }
 
     void SpawnNPC(){
+        if (spriteIDAvailable.Count == 0) {
+            return;
+        }
         Vector3 spawnPosition = new Vector3(Random.Range(-centerRadius, centerRadius), Random.Range(-centerRadius, centerRadius), 0);
         Quaternion spawnRotation = Quaternion.identity;
         GameObject newInstance = Instantiate(NPCprefab, spawnPosition, spawnRotation);
@@ -44,16 +52,12 @@ public class NPCManager : MonoBehaviour
         NPCs.Add(script);
 
 
-        script.IDname = firstnameList[Random.Range(0, firstnameList.Length)] + " " + surnameList[Random.Range(0, surnameList.Length)];
-        script.ID = IDnumber++;
-        script.hatIndex = Random.Range(0, hatSprites.Length);
-        script.nPCSprite.changeHatSprite(hatSprites[script.hatIndex], script.hatIndex);
-        
         script.centerRadius = centerRadius;
 
-        int colorIndex = Random.Range(0, defaultSprites.Length);
-        script.colorIndex = colorIndex;
-        script.nPCSprite.changeBodySprite(defaultSprites[colorIndex]);
+        script.IDname = firstnameList[Random.Range(0, firstnameList.Length)] + " " + surnameList[Random.Range(0, surnameList.Length)];
+        script.ID = IDnumber++;
+        
+        GenerateNPCAppearance(script);
 
         int deathCauseIndex = Random.Range(1, 4);
         script.deathCause = (EDeathCauses) deathCauseIndex;
@@ -68,5 +72,19 @@ public class NPCManager : MonoBehaviour
             names.Add(npc.IDname);
         }
         return names;
+    }
+
+    public void GenerateNPCAppearance(NPC script){
+        int spriteID = spriteIDAvailable[Random.Range(0,spriteIDAvailable.Count)];
+        spriteIDAvailable.Remove(spriteID);
+
+        script.hatIndex = spriteID / defaultSprites.Length;
+        int colorIndex = spriteID % defaultSprites.Length;
+
+        script.nPCSprite.changeHatSprite(hatSprites[script.hatIndex], script.hatIndex);
+        script.colorIndex = colorIndex;
+        script.nPCSprite.changeBodySprite(defaultSprites[colorIndex]);
+
+        script.spriteID = spriteID;
     }
 }

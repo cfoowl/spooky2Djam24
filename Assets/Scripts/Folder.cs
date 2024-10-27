@@ -12,6 +12,7 @@ public class Folder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public Transform originalParent;
     public TMP_Text nameText;
     public TMP_Text deathCauseText;
+    public EDeathCauses deathCauses;
     public Vector3 defaultScale = Vector3.one;
     public Vector3 highlightScale = Vector3.one * 1.2f;
 

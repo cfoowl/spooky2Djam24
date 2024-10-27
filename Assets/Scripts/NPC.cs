@@ -66,4 +66,9 @@ public class NPC : MonoBehaviour
         randomDestination = new Vector2(targetX, targetY);
         inCoroutine = false;
     }
+
+    public void HappyEnd() {
+        NPCManager.instance.NPCs.Remove(this);
+        Destroy(gameObject);
+    }
 }

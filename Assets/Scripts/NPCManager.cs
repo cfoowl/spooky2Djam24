@@ -6,7 +6,7 @@ using UnityEngine;
 public class NPCManager : MonoBehaviour
 {
     public static NPCManager instance;
-    List<NPC> NPCs = new List<NPC>();
+    public List<NPC> NPCs = new List<NPC>();
     public GameObject NPCprefab;
     public string[] firstnameList;
     public string[] surnameList;

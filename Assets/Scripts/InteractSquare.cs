@@ -61,11 +61,14 @@ public class InteractSquare : MonoBehaviour
                 PictureManager.instance.createPicture(draggable.npc);
                 break;
             case EZonesTypes.RETURN:
-                UIManager.instance.ShowFolderUIPanel();
+                UIManager.instance.ShowFolderUIPanel(draggable);
                 break;
             default:
                 break;
         }
     }
+
+
+    
 
 }

@@ -34,6 +34,7 @@ public class FolderManager : MonoBehaviour
         folder.originalParent = folderSlot.gameObject.transform;
         folder.nameText.text = dropdown_name.options[dropdown_name.value].text;
         folder.deathCauseText.text = dropdown_death_cause.options[dropdown_death_cause.value].text;
+        folder.deathCauses = (EDeathCauses) dropdown_death_cause.value;
         
 
     }

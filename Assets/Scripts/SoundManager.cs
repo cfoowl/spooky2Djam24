@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] spawnGhost;
     public AudioClip[] angryGhost;
     public AudioClip[] grabGhost;
+    public AudioClip[] talkGhost;
     public AudioClip[] paper;
     public AudioClip buttonPress;
     public AudioClip Photoprint;
@@ -54,6 +55,10 @@ public class SoundManager : MonoBehaviour
     public void PlayGrabGhostSound() {
         int rand = Random.Range(0, grabGhost.Length);
         PlaySound(grabGhost[rand]);
+    }
+    public void PlayTalkGhostSound() {
+        int rand = Random.Range(0, talkGhost.Length);
+        PlaySound(talkGhost[rand]);
     }
     public void PlayPaperSound() {
         int rand = Random.Range(0, paper.Length);

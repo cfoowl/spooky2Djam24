@@ -54,7 +54,7 @@ public class InteractSquare : MonoBehaviour
         switch(type) {
             case EZonesTypes.HOME:
                 Textbubble.instance.tMP_Text.text = draggable.npc.sentence;
-
+                SoundManager.instance.PlayTalkGhostSound();
                 break;
             case EZonesTypes.PHOTO:
                 PictureManager.instance.createPicture(draggable.npc);

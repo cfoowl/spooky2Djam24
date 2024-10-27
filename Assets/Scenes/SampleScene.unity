@@ -2955,7 +2955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satisfactionStart: 5
-  satisfactionMax: 15
+  satisfactionMax: 6
   satisfaction: 0
   defaultCursor: {fileID: 2800000, guid: 5d15892e2accf2441a4e336ee9551ed8, type: 3}
   dragCursor: {fileID: 2800000, guid: efa144897195e2c4e9891cbe93c3872d, type: 3}
@@ -2997,7 +2997,7 @@ MonoBehaviour:
   - {fileID: 1385975697}
   - {fileID: 341873906}
   fadeDuration: 2
-  masterVolume: 1
+  masterVolume: 0.5
 --- !u!114 &599825603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3034,6 +3034,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 42efa2b24bd22fe4b8d326cafecb71f6, type: 3}
   - {fileID: 8300000, guid: 2719273ae23026645a5b061efefc40eb, type: 3}
   - {fileID: 8300000, guid: 0595a1b1624b9f948a77e04beba8d20f, type: 3}
+  talkGhost:
+  - {fileID: 8300000, guid: 51e7efe82912f834f812d033833bf14e, type: 3}
+  - {fileID: 8300000, guid: e9f47f65cf5e96f48a67f94c8e2c7d60, type: 3}
+  - {fileID: 8300000, guid: 5f73163547aa05e498e9077d236bacb8, type: 3}
+  - {fileID: 8300000, guid: 043f5f4ff9716894c8bf53c6ae25bdb0, type: 3}
   paper:
   - {fileID: 8300000, guid: 1b571d021a3b85c499445a0a56b9464e, type: 3}
   - {fileID: 8300000, guid: 8054abaa76a98df43b44b5b5cac8081d, type: 3}
@@ -3055,7 +3060,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

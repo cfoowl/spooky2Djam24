@@ -41,10 +41,7 @@ public class PictureManager : MonoBehaviour
         newPicture.originalParent = pictureSlot.gameObject.transform;
         pictures.Add(newPicture);
         newPicture.ID = npc.ID;
-        newPicture.hasCollar = npc.hasCollar;
-        newPicture.hasGlasses = npc.hasGlasses;
-        newPicture.hasHat = npc.hasHat;
-        newPicture.hasTie = npc.hasTie;
+        newPicture.hatIndex = npc.hatIndex;
 
         //Debug
         new_instance.GetComponentInChildren<TMP_Text>().text = npc.ID.ToString();

@@ -11,13 +11,12 @@ public class NPC : MonoBehaviour
     Vector2 randomDestination = Vector2.zero;
     bool inCoroutine = false;
 
+    public NPCSprite nPCSprite;
+
     // Identity trait
     public int ID;
     public string IDname;
-    public bool hasGlasses;
-    public bool hasHat;
-    public bool hasTie;
-    public bool hasCollar;
+    public int hatIndex; 
     public EDeathCauses deathCause;
     public string sentence;
 

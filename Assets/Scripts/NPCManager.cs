@@ -12,6 +12,7 @@ public class NPCManager : MonoBehaviour
     public string[] surnameList;
     public string[] deathCauseSentences;
     public string[] greetings;
+    public Sprite[] hatSprites;
     public float centerRadius = 2f;
     public float spawnCDMin = 10f;
     public float spawnCDMax = 15f;
@@ -44,10 +45,9 @@ public class NPCManager : MonoBehaviour
 
         script.IDname = firstnameList[Random.Range(0, firstnameList.Length)] + " " + surnameList[Random.Range(0, surnameList.Length)];
         script.ID = IDnumber++;
-        script.hasGlasses = Random.Range(0,2) == 0;
-        script.hasHat = Random.Range(0,2) == 0;
-        script.hasTie = Random.Range(0,2) == 0;
-        script.hasCollar = Random.Range(0,2) == 0;
+        script.hatIndex = Random.Range(0, hatSprites.Length);
+        script.nPCSprite.changeHatSprite(hatSprites[script.hatIndex], script.hatIndex);
+        
         script.centerRadius = centerRadius;
 
         int deathCauseIndex = Random.Range(1, 4);

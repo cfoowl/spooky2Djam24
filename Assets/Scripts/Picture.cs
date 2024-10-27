@@ -13,10 +13,7 @@ public class Picture : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
 
 
     public int ID;
-    public bool hasGlasses;
-    public bool hasHat;
-    public bool hasTie;
-    public bool hasCollar;
+    public int hatIndex;
 
     void Awake() {
         canvasGroup = GetComponent<CanvasGroup>();

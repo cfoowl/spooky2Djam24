@@ -44,12 +44,17 @@ public class UIManager : MonoBehaviour
         if(draggable) {
             if (folder.nameText.text == draggable.npc.IDname) {
                 if(folder.deathCauses == draggable.npc.deathCause){
-                    // success
-                    draggable.npc.HappyEnd();
+                    if(folder.pictureID == draggable.npc.ID) {
+                        // success
+                        draggable.npc.HappyEnd();
+                    } else {
+                        Debug.Log("Wrong picture");
+                    }
+                } else {
+                    Debug.Log("Wrong cause");
                 }
-                
             } else {
-                Debug.Log("Bad name");
+                Debug.Log("Wrong name");
             }
         }
     }
